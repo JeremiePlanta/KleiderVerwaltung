@@ -3,6 +3,7 @@ package org.example;
 import java.util.List;
 
 public class Main {
+    @SuppressWarnings("java:S106")
     public static void main(String[] args) {
         KleiderVerwaltung kleiderVerwaltung = new KleiderVerwaltung();
         Kleidungsstueck hose = new Kleidungsstueck("M","Blau","Pakistan");
