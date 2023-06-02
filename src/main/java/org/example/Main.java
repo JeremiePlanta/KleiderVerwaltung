@@ -1,5 +1,8 @@
 package org.example;
 
+import io.jexxa.core.JexxaMain;
+import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
+
 import java.util.List;
 
 public class Main {
@@ -15,6 +18,10 @@ public class Main {
         kleiderVerwaltung.delete(hemd);
         klamotten = kleiderVerwaltung.get();
         klamotten.forEach(kleidungsstueck -> System.out.println(kleidungsstueck.getHerstellungsland()));
-
+        var jexxaMain = new JexxaMain(Main.class);
+        jexxaMain
+                .bind(RESTfulRPCAdapter.class).to(KleiderVerwaltung.class)
+                .bind(RESTfulRPCAdapter.class).to(jexxaMain.getBoundedContext())
+                .run();
     }
 }
