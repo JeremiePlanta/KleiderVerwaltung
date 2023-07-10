@@ -2,6 +2,8 @@ package org.example;
 
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
+import org.example.domain.KleiderVerwaltung;
+import org.example.domain.Kleidungsstueck;
 
 import java.util.List;
 
