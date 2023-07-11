@@ -4,13 +4,14 @@ import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import org.example.domain.KleiderVerwaltung;
 import org.example.domain.Kleidungsstueck;
+import org.example.infrastructure.drivenadapter.persistence.KleiderRepositoryImpl;
 
 import java.util.List;
 
 public class Main {
     @SuppressWarnings("java:S106")
     public static void main(String[] args) {
-        KleiderVerwaltung kleiderVerwaltung = new KleiderVerwaltung();
+        KleiderVerwaltung kleiderVerwaltung = new KleiderVerwaltung(new KleiderRepositoryImpl());
         Kleidungsstueck hose = new Kleidungsstueck("M","Blau","Pakistan");
         Kleidungsstueck hemd = new Kleidungsstueck("L","Weiss","China");
         kleiderVerwaltung.add(hemd);

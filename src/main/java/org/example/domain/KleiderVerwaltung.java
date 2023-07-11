@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KleiderVerwaltung {
-    private final List<Kleidungsstueck> kleiderverwaltungsliste= new ArrayList<>();
+    private final KleiderRepository kleiderverwaltungsliste;
+
+    public KleiderVerwaltung(KleiderRepository kleiderRepository){
+        this.kleiderverwaltungsliste = kleiderRepository;
+    }
 
     public void add (Kleidungsstueck kleidungsstueck){
         kleiderverwaltungsliste.add(kleidungsstueck);
@@ -13,7 +17,7 @@ public class KleiderVerwaltung {
         kleiderverwaltungsliste.remove(kleidungsstueck);
     }
     public List<Kleidungsstueck> get (){
-        return this.kleiderverwaltungsliste;
+        return kleiderverwaltungsliste.getAll();
     }
 
 }
