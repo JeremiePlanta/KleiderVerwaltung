@@ -7,10 +7,13 @@ public class Kleidungsstueck {
     private final String farbe;
     private final String herstellungsland;
 
-    public Kleidungsstueck(String groesse, String farbe, String herstellungsland) {
+    private final String artikelnummer;
+
+    public Kleidungsstueck(String groesse, String farbe, String herstellungsland, String artikelnummer) {
         this.groesse = groesse;
         this.farbe = farbe;
         this.herstellungsland = herstellungsland;
+        this.artikelnummer = artikelnummer;
     }
 
     @SuppressWarnings("unused")
@@ -26,12 +29,17 @@ public class Kleidungsstueck {
     public String getHerstellungsland() {
         return herstellungsland;
     }
+
+    public String getArtikelnummer() {
+        return artikelnummer;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Kleidungsstueck that = (Kleidungsstueck) o;
-        return Objects.equals(groesse, that.groesse) && Objects.equals(farbe, that.farbe) && Objects.equals(herstellungsland, that.herstellungsland);
+        return Objects.equals(groesse, that.groesse) && Objects.equals(farbe, that.farbe) && Objects.equals(herstellungsland, that.herstellungsland) && Objects.equals(artikelnummer, that.artikelnummer);
     }
 
     @Override
