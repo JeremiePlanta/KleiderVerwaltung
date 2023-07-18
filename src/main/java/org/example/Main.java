@@ -20,7 +20,7 @@ public class Main {
 
         var jexxaMain = new JexxaMain(Main.class);
         jexxaMain
-                .bind(RESTfulRPCAdapter.class).to(KleiderVerwaltung.class)
+                .bind(RESTfulRPCAdapter.class).to(kleiderVerwaltung)
                 .bind(RESTfulRPCAdapter.class).to(jexxaMain.getBoundedContext())
                 .run();
     }
