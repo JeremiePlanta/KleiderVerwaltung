@@ -7,10 +7,12 @@ import org.example.applicationservice.KleiderVerwaltung;
 import org.example.domainservice.StammdatenService;
 import org.example.infrastructure.drivenadapter.persistence.KleiderRepositoryImpl;
 
+import java.util.Properties;
+
 public class Main {
     @SuppressWarnings("java:S106")
     public static void main(String[] args) {
-        KleiderRepository kleiderRepository = new KleiderRepositoryImpl();
+        KleiderRepository kleiderRepository = new KleiderRepositoryImpl(new Properties());
         KleiderVerwaltung kleiderVerwaltung = new KleiderVerwaltung(kleiderRepository);
         StammdatenService stammdatenService = new StammdatenService(kleiderRepository);
         stammdatenService.initStammdaten();
