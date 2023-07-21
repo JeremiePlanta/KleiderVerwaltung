@@ -12,14 +12,13 @@ import java.util.Properties;
 public class Main {
     @SuppressWarnings("java:S106")
     public static void main(String[] args) {
-        KleiderRepository kleiderRepository = new KleiderRepositoryImpl(new Properties());
-        KleiderVerwaltung kleiderVerwaltung = new KleiderVerwaltung(kleiderRepository);
-        StammdatenService stammdatenService = new StammdatenService(kleiderRepository);
-        stammdatenService.initStammdaten();
 
         var jexxaMain = new JexxaMain(Main.class);
+
         jexxaMain
-                .bind(RESTfulRPCAdapter.class).to(kleiderVerwaltung)
+                .bootstrap(StammdatenService.class).with(StammdatenService::initStammdaten)
+
+                .bind(RESTfulRPCAdapter.class).to(KleiderVerwaltung.class)
                 .bind(RESTfulRPCAdapter.class).to(jexxaMain.getBoundedContext())
                 .run();
     }
