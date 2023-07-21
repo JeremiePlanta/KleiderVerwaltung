@@ -1,4 +1,7 @@
-package org.example.domain;
+package org.example.applicationservice;
+
+import org.example.domain.KleiderRepository;
+import org.example.domain.Kleidungsstueck;
 
 import java.util.ArrayList;
 import java.util.List;

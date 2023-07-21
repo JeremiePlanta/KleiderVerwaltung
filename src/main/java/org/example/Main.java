@@ -3,12 +3,9 @@ package org.example;
 import io.jexxa.core.JexxaMain;
 import io.jexxa.drivingadapter.rest.RESTfulRPCAdapter;
 import org.example.domain.KleiderRepository;
-import org.example.domain.KleiderVerwaltung;
-import org.example.domain.Kleidungsstueck;
+import org.example.applicationservice.KleiderVerwaltung;
 import org.example.domainservice.StammdatenService;
 import org.example.infrastructure.drivenadapter.persistence.KleiderRepositoryImpl;
-
-import java.util.List;
 
 public class Main {
     @SuppressWarnings("java:S106")
