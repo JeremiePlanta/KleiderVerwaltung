@@ -1,7 +1,10 @@
 package org.example.domain;
 
+import io.jexxa.addend.applicationcore.Aggregate;
+
 import java.util.Objects;
 
+@Aggregate
 public class Kleidungsstueck {
     private final String groesse;
     private final String farbe;

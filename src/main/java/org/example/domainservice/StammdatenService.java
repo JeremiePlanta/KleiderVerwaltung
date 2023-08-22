@@ -1,10 +1,12 @@
 package org.example.domainservice;
 
+import io.jexxa.addend.applicationcore.DomainService;
 import org.example.domain.KleiderRepository;
 import org.example.domain.Kleidungsstueck;
 
 import java.util.List;
 
+@DomainService
 public class StammdatenService {
     private static final Kleidungsstueck pakistan =new Kleidungsstueck("M","Blau","Pakistan", "4353435");
     private static final Kleidungsstueck china =new Kleidungsstueck("L","Weiss","China", "5463643364643");
