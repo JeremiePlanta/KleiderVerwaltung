@@ -12,20 +12,28 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <jexxa.release.version>6.1.5</jexxa.release.version>
+        <slf4j.simple.version>2.0.7</slf4j.simple.version>
         <postgres.version>42.6.0</postgres.version>
+        <addend.version>2.0.0</addend.version>
+
+        <junit.platform.launcher.version>1.10.0</junit.platform.launcher.version>
+        <junit.jupiter.engine.version>5.10.0</junit.jupiter.engine.version>
+        <junit.jupiter.params.version>5.10.0</junit.jupiter.params.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.jexxa</groupId>
             <artifactId>jexxa-web</artifactId>
-            <version>6.1.5</version>
+            <version>${jexxa.release.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>2.0.7</version>
+            <version>${slf4j.simple.version}</version>
         </dependency>
 
         <dependency>
@@ -33,6 +41,42 @@
             <artifactId>postgresql</artifactId>
             <version>${postgres.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.jexxa.addend</groupId>
+            <artifactId>Addend</artifactId>
+            <version>${addend.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.jexxa.jexxatest</groupId>
+            <artifactId>jexxa-test</artifactId>
+            <version>${jexxa.release.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>${junit.platform.launcher.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.params.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
