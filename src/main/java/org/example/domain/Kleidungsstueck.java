@@ -1,40 +1,36 @@
 package org.example.domain;
 
 import io.jexxa.addend.applicationcore.Aggregate;
+import io.jexxa.addend.applicationcore.AggregateID;
 
 import java.util.Objects;
 
 @Aggregate
 public class Kleidungsstueck {
-    private final String groesse;
-    private final String farbe;
-    private final String herstellungsland;
+    private final KleidungsstueckDaten kleidungsstueckDaten;
+    private final Artikelnummer artikelnummer;
 
-    private final String artikelnummer;
-
-    public Kleidungsstueck(String groesse, String farbe, String herstellungsland, String artikelnummer) {
-        this.groesse = groesse;
-        this.farbe = farbe;
-        this.herstellungsland = herstellungsland;
+    public Kleidungsstueck(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten ) {
+        this.kleidungsstueckDaten = kleidungsstueckDaten;
         this.artikelnummer = artikelnummer;
     }
 
     @SuppressWarnings("unused")
     public String getGroesse() {
-        return groesse;
+        return kleidungsstueckDaten.groesse();
     }
 
     @SuppressWarnings("unused")
     public String getFarbe() {
-        return farbe;
+        return kleidungsstueckDaten.farbe();
     }
     @SuppressWarnings("unused")
     public String getHerstellungsland() {
-        return herstellungsland;
+        return kleidungsstueckDaten.herstellungsland();
     }
-
-    public String getArtikelnummer() {
-        return artikelnummer;
+    @AggregateID
+    public Artikelnummer getArtikelnummer() {
+        return this.artikelnummer;
     }
 
     @Override
@@ -42,12 +38,7 @@ public class Kleidungsstueck {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Kleidungsstueck that = (Kleidungsstueck) o;
-        return Objects.equals(groesse, that.groesse) && Objects.equals(farbe, that.farbe) && Objects.equals(herstellungsland, that.herstellungsland) && Objects.equals(artikelnummer, that.artikelnummer);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(groesse, farbe, herstellungsland);
+        return Objects.equals(artikelnummer, that.artikelnummer);
     }
 
 }

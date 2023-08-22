@@ -8,7 +8,7 @@ import java.util.List;
 public interface KleiderRepository {
     List<Kleidungsstueck> getAll();
 
-    void remove(Kleidungsstueck kleidungsstueck);
+    void remove(Artikelnummer artikelnummer);
 
     void add (Kleidungsstueck kleidungsstueck);
 }

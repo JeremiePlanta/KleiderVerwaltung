@@ -1,8 +1,10 @@
 package org.example.applicationservice;
 
 import io.jexxa.addend.applicationcore.ApplicationService;
+import org.example.domain.Artikelnummer;
 import org.example.domain.KleiderRepository;
 import org.example.domain.Kleidungsstueck;
+import org.example.domain.KleidungsstueckDaten;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +17,14 @@ public class KleiderVerwaltung {
         this.kleiderverwaltungsliste = kleiderRepository;
     }
 
-    public void add (Kleidungsstueck kleidungsstueck){
-        kleiderverwaltungsliste.add(kleidungsstueck);
+    public void add (Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten){
+        kleiderverwaltungsliste.add(new Kleidungsstueck(artikelnummer,kleidungsstueckDaten));
     }
-    public void delete (Kleidungsstueck kleidungsstueck){
-        kleiderverwaltungsliste.remove(kleidungsstueck);
+    public void delete (Artikelnummer artikelnummer){
+        kleiderverwaltungsliste.remove(artikelnummer);
     }
-    public List<Kleidungsstueck> get (){
-        return kleiderverwaltungsliste.getAll();
+    public List<Artikelnummer> get (){
+        return kleiderverwaltungsliste.getAll().stream().map(Kleidungsstueck::getArtikelnummer).toList();
     }
 
 }
