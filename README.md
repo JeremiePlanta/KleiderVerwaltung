@@ -12,3 +12,20 @@ Dieses Projekt soll folgende Funktionalität anbieten:
 - Es wird ein 6-stelliger VerifizierungsCode an die angegebene E-Mail-Adresse verschickt
 - Der VerifizierungsCode muss zusammen mit der Seriennummer übergeben werden, damit das Kleidungsstueck in die KleiderVerwaltung hinzugefügt wird
 - Der VerifizierungsCode verliert nach 24 Stunden seine Gültigkeit
+
+Abbildung auf DDD Mustersprache und Klassen:
+ApplicationService: 
+    KleiderVerwaltung
+        Neue Methoden registriere und verifiziere
+ValueObject:
+    KontaktDaten
+    EmailAdresse
+    VerifizierungsCode
+Aggregate:
+    Kleidungsstueck
+    RegistrierungsDaten
+Repository:
+    KleiderRepository
+    RegistrierungsDatenRepository
+DomainEvent:
+    VerifizierungsCodeVerschickt
