@@ -13,8 +13,8 @@ public class KleiderVerwaltung {
         this.kleiderverwaltungsliste = kleiderRepository;
     }
 
-    public void add (Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten){
-        kleiderverwaltungsliste.add(new Kleidungsstueck(artikelnummer,kleidungsstueckDaten));
+    public void add (Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten){
+        kleiderverwaltungsliste.add(new Kleidungsstueck(artikelnummer,kleidungsstueckDaten, kontaktDaten));
     }
     public void delete (Artikelnummer artikelnummer){
         kleiderverwaltungsliste.remove(artikelnummer);

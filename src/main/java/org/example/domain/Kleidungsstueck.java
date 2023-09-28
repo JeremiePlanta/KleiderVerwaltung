@@ -8,11 +8,14 @@ import java.util.Objects;
 @Aggregate
 public class Kleidungsstueck {
     private final KleidungsstueckDaten kleidungsstueckDaten;
+
+    private final KontaktDaten kontaktDaten;
     private final Artikelnummer artikelnummer;
 
-    public Kleidungsstueck(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten ) {
+    public Kleidungsstueck(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten) {
         this.kleidungsstueckDaten = kleidungsstueckDaten;
         this.artikelnummer = artikelnummer;
+        this.kontaktDaten = kontaktDaten;
     }
 
     @SuppressWarnings("unused")
@@ -40,5 +43,6 @@ public class Kleidungsstueck {
         Kleidungsstueck that = (Kleidungsstueck) o;
         return Objects.equals(artikelnummer, that.artikelnummer);
     }
+    public KontaktDaten getKontaktDaten(){return this.kontaktDaten;}
 
 }

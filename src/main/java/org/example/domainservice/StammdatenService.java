@@ -1,10 +1,7 @@
 package org.example.domainservice;
 
 import io.jexxa.addend.applicationcore.DomainService;
-import org.example.domain.Artikelnummer;
-import org.example.domain.KleiderRepository;
-import org.example.domain.Kleidungsstueck;
-import org.example.domain.KleidungsstueckDaten;
+import org.example.domain.*;
 
 import java.util.List;
 
@@ -17,8 +14,8 @@ public class StammdatenService {
     }
     public void initStammdaten(){
 
-        Kleidungsstueck pakistan =new Kleidungsstueck(new Artikelnummer("4353435"), new KleidungsstueckDaten("M","Blau","Pakistan"));
-        Kleidungsstueck china =new Kleidungsstueck(new Artikelnummer("5463643364643"), new KleidungsstueckDaten("L","Weiss","China"));
+        Kleidungsstueck pakistan =new Kleidungsstueck(new Artikelnummer("4353435"), new KleidungsstueckDaten("M","Blau","Pakistan"), new KontaktDaten(new EmailAdresse("Timothi@gobbl.lu"), "Roll", "Pate"));
+        Kleidungsstueck china =new Kleidungsstueck(new Artikelnummer("5463643364643"), new KleidungsstueckDaten("L","Weiss","China"), new KontaktDaten(new EmailAdresse("goegde@sfg.con"), "Fedora", "Megusta"));
 
         List<Kleidungsstueck> alleKleider = kleiderRepository.getAll();
         if(!alleKleider.contains(pakistan)){
