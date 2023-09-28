@@ -1,12 +1,8 @@
 package org.example.applicationservice;
 
 import io.jexxa.addend.applicationcore.ApplicationService;
-import org.example.domain.Artikelnummer;
-import org.example.domain.KleiderRepository;
-import org.example.domain.Kleidungsstueck;
-import org.example.domain.KleidungsstueckDaten;
+import org.example.domain.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationService
@@ -25,6 +21,14 @@ public class KleiderVerwaltung {
     }
     public List<Artikelnummer> get (){
         return kleiderverwaltungsliste.getAll().stream().map(Kleidungsstueck::getArtikelnummer).toList();
+    }
+
+    public void registriere(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten){
+
+    }
+
+    public void verifiziere(Artikelnummer artikelnummer, VerifizierungsCode verifizierungsCode){
+
     }
 
 }
