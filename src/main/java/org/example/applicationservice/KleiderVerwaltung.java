@@ -30,7 +30,12 @@ public class KleiderVerwaltung {
         registrierungsDatenListe.add(new RegistrierungsDaten(artikelnummer, kleidungsstueckDaten, kontaktDaten));
     }
 
-    public void verifiziere(Artikelnummer artikelnummer, VerifizierungsCode verifizierungsCode){
+    public void verifiziere(Artikelnummer artikelnummer, VerifizierungsCode verifizierungsCode) throws UngueltigerVerifizierungsCode {
+        RegistrierungsDaten registrierungsDaten = registrierungsDatenListe.get(artikelnummer).orElseThrow();
+        registrierungsDaten.verifiziere(verifizierungsCode);
+
+        kleiderverwaltungsliste.add(new Kleidungsstueck(artikelnummer,registrierungsDaten.getKleidungsstueckDaten(), registrierungsDaten.getKontaktDaten()));
+        registrierungsDatenListe.remove(artikelnummer);
 
     }
 

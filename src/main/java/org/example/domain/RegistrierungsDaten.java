@@ -22,6 +22,7 @@ public class RegistrierungsDaten {
         this.kleidungsstueckDaten = kleidungsstueckDaten;
         this.kontaktDaten = kontaktDaten;
         this.verifizierungsCode = new VerifizierungsCode(UUID.randomUUID().toString());
+        sendVerifizierunsCode();
     }
 
     public void verifiziere(VerifizierungsCode verifizierungsCode) throws UngueltigerVerifizierungsCode {
