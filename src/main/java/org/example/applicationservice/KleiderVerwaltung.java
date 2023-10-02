@@ -9,8 +9,11 @@ import java.util.List;
 public class KleiderVerwaltung {
     private final KleiderRepository kleiderverwaltungsliste;
 
-    public KleiderVerwaltung(KleiderRepository kleiderRepository){
+    private final  RegistrierungsDatenRepository registrierungsDatenListe;
+
+    public KleiderVerwaltung(KleiderRepository kleiderRepository, RegistrierungsDatenRepository registrierungsDatenRepository){
         this.kleiderverwaltungsliste = kleiderRepository;
+        this.registrierungsDatenListe =registrierungsDatenRepository;
     }
 
     public void add (Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten){
@@ -24,7 +27,7 @@ public class KleiderVerwaltung {
     }
 
     public void registriere(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten){
-
+        registrierungsDatenListe.add(new RegistrierungsDaten(artikelnummer, kleidungsstueckDaten, kontaktDaten));
     }
 
     public void verifiziere(Artikelnummer artikelnummer, VerifizierungsCode verifizierungsCode){
