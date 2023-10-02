@@ -1,7 +1,9 @@
 package org.example.domain;
 
-import java.util.List;
+import io.jexxa.addend.applicationcore.Repository;
 
+import java.util.List;
+@Repository
 public interface RegistrierungsDatenRepository {
 
     void add(RegistrierungsDaten registrierungsDaten);
