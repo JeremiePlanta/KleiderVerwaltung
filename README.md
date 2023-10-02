@@ -6,6 +6,7 @@ Dieses Projekt soll folgende Funktionalität anbieten:
 - Hinzufügen eines Kleidungstücks in die KleiderVerwaltung
 - Löschen eines Kleidungstücks aus der KleiderVerwaltung
 - Abfragen aller Kleidungstücke aus der KleiderVerwaltung
+- Aktualisieren eines Kleidungstücks in der KleiderVerwaltung
 
 [User-Story Kleidungsregistrierung]Als Lagermitarbeiter möchte ich, dass Kunden ihr Kleidungsstück registrieren müssen, damit ich die möglichkeit habe die RegistrierungsDaten automatisch zu verifizieren.
 - Bei der Registrierung müssen gültige KontaktDaten und kleidungsstueckDaten angegeben werden.

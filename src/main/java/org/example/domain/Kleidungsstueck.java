@@ -7,9 +7,9 @@ import java.util.Objects;
 
 @Aggregate
 public class Kleidungsstueck {
-    private final KleidungsstueckDaten kleidungsstueckDaten;
+    private KleidungsstueckDaten kleidungsstueckDaten;
 
-    private final KontaktDaten kontaktDaten;
+    private KontaktDaten kontaktDaten;
     private final Artikelnummer artikelnummer;
 
     public Kleidungsstueck(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten) {
@@ -44,5 +44,14 @@ public class Kleidungsstueck {
         return Objects.equals(artikelnummer, that.artikelnummer);
     }
     public KontaktDaten getKontaktDaten(){return this.kontaktDaten;}
-
+    private void setKleidungsstueckDaten(KleidungsstueckDaten kleidungsstueckDaten){
+        this.kleidungsstueckDaten = kleidungsstueckDaten;
+    }
+    private void setKontaktDaten(KontaktDaten kontaktDaten){
+        this.kontaktDaten = kontaktDaten;
+    }
+    public void aktualisiere(KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten){
+        setKleidungsstueckDaten(kleidungsstueckDaten);
+        setKontaktDaten(kontaktDaten);
+    }
 }

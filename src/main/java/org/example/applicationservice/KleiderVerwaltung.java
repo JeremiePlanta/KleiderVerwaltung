@@ -25,6 +25,12 @@ public class KleiderVerwaltung {
     public List<Artikelnummer> get (){
         return kleiderverwaltungsliste.getAll().stream().map(Kleidungsstueck::getArtikelnummer).toList();
     }
+    public void aktualisiere(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten){
+        Kleidungsstueck kleidungsstueck = kleiderverwaltungsliste.get(artikelnummer).orElseThrow();
+
+        kleidungsstueck.aktualisiere(kleidungsstueckDaten, kontaktDaten);
+        kleiderverwaltungsliste.update(kleidungsstueck);
+    }
 
     public void registriere(Artikelnummer artikelnummer, KleidungsstueckDaten kleidungsstueckDaten, KontaktDaten kontaktDaten){
         registrierungsDatenListe.add(new RegistrierungsDaten(artikelnummer, kleidungsstueckDaten, kontaktDaten));
